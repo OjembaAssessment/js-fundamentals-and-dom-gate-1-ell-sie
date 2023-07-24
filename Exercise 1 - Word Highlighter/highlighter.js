@@ -26,9 +26,9 @@ const highlightedParagraph = words
 
     if (isMostFrequent) {
       if (shouldUnderline) {
-        return `<span style="background-color: yellow; text-decoration: underline;">${word}</span>`;
+        return `<span style="background-color: pink; text-decoration: underline;">${word}</span>`;
       }
-      return `<span style="background-color: yellow;">${word}</span>`;
+      return `<span style="background-color: pink;">${word}</span>`;
     }
 
     return word;
