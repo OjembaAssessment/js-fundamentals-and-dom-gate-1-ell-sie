@@ -6,6 +6,11 @@
     gap: 100px;
 }
 
+body{
+    margin: auto;
+    padding: 100px;
+}
+
 .container{
     display: flex;
     gap: 100px;
