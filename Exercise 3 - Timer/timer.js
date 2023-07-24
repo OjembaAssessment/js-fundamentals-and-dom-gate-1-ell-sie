@@ -1,23 +1,21 @@
-// console.log("Exercise 3 - Timer");
 const time = document.querySelector('h2');
 const resetButton = document.querySelector('.reset');
 const startStopButton = document.querySelector('.start');
 const addButton = document.querySelector('.add');
+const userTimeInput = document.getElementById('userTime');
 const minusButton = document.querySelector('.minus');
-let timeSecond = 32;
-let countDown ;
+let countDown;
+let timeSecond = 0; // Initialize timeSecond with 0
+
 time.innerHTML = timeSecond + 's';
 
-// function updateTimer() {
-//   time.innerHTML = timeSecond + 's';
-// }
-
 function startCountdown() {
-    countDown = setInterval(() => {
+  timeSecond = userTimeInput.value; // Assigning the value from the input field to timeSecond
+  countDown = setInterval(() => {
     timeSecond--;
     time.innerHTML = timeSecond + 's';
 
-    if (timeSecond <= 0 || timeSecond <1) {
+    if (timeSecond <= 0 || timeSecond < 1) {
       clearInterval(countDown);
       hidden();
     }
@@ -29,35 +27,32 @@ function stopCountdown() {
 }
 
 addButton.addEventListener('click', function () {
-    timeSecond += 1;
-    time.innerHTML = timeSecond + 's';
-  }
-);
+  timeSecond++;
+  time.innerHTML = timeSecond + 's';
+});
 
 minusButton.addEventListener('click', function () {
-    timeSecond -= 1;
-    time.innerHTML = timeSecond + 's';
+  timeSecond--;
+  time.innerHTML = timeSecond + 's';
 });
 
 resetButton.addEventListener('click', function resetCountdown() {
-    stopCountdown();
-    timeSecond = 32; // Set it back to the initial value (32 seconds)
-    time.innerHTML = timeSecond + 's';
-    startStopButton.textContent = 'START';
-    addButton.disabled = false;
-    minusButton.disabled = false;
-  });
+  stopCountdown();
+  timeSecond = 0;
+  time.innerHTML = timeSecond + 's';
+  startStopButton.textContent = 'START';
+  addButton.disabled = false;
+  minusButton.disabled = false;
+});
 
 startStopButton.addEventListener('click', function () {
   if (countDown) {
-    // Countdown is running, stop it
     stopCountdown();
     startStopButton.textContent = 'START';
     addButton.disabled = false;
     minusButton.disabled = false;
     resetButton.disabled = false;
   } else {
-    // Countdown is not running, start it
     startCountdown();
     startStopButton.textContent = 'STOP';
     addButton.disabled = true;
