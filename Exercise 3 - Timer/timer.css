@@ -9,9 +9,21 @@
 .container{
     display: flex;
     justify-content: space-between;
+    
 }
 
 .buttons{
+    height: 100px;
     display: flex;
     justify-content: space-between;
+}
+
+.reset{
+    background-color: rgb(55, 208, 157);
+    width: 200px;
+}
+
+.start{
+    background-color: rgb(55, 208, 157);
+    width: 200px;
 }
