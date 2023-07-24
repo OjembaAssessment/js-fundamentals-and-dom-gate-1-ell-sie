@@ -48,6 +48,7 @@ resetButton.addEventListener('click', function resetCountdown() {
 startStopButton.addEventListener('click', function () {
   if (countDown) {
     stopCountdown();
+    countDown = null;
     startStopButton.textContent = 'START';
     addButton.disabled = false;
     minusButton.disabled = false;
