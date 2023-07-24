@@ -1,4 +1,17 @@
 #myTimer {
-    color: red;
+    color: black;
     font-size: 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
 }
