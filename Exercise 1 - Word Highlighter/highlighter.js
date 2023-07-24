@@ -1,4 +1,3 @@
-// console.log("Exercise 1 - Word Highlighter");
 const paragraph = document.querySelector('#myParagraph')
 const words = paragraph.textContent.split(' ');
 
